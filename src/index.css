@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    ul,ol{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      @apply text-white bg-slate-900 
+    }
+  }
