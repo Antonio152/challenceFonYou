@@ -6,7 +6,7 @@ export const App = () => {
     <div className="relative px-8 py-8 h-max">
       <SearchBar />
       <GridData />
-      <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center">
         <Modal />
       </div>
     </div>
