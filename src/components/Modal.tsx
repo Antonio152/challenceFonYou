@@ -4,7 +4,7 @@ export const Modal = () => {
     useCharacterStore();
   return (
     <div
-      className={`fixed inset-0 flex items-center justify-center z-50 ${
+      className={`bg-black bg-opacity-50 fixed inset-0 flex items-center justify-center z-50 ${
         openModal ? "opacity-100" : "opacity-0 pointer-events-none"
       } transition-opacity duration-300 left-0 top-0 h-full w-full overflow-y-auto overflow-x-hidden outline-none`}
     >
