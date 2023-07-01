@@ -4,14 +4,20 @@ import {
   setActiveSearch,
   setCharacterName,
   setCharactersData,
+  setOpenModal,
 } from "../store/character/characterSlice";
 import { RootState, useAppDispatch } from "../store/store";
 import { Character, ICharacterData } from "../interfaces/characterInterface";
 
 export const useCharacterStore = () => {
   const dispatch = useAppDispatch();
-  const { characterName, activeCharacter, charactersData, activeSearch } =
-    useSelector((state: RootState) => state.character);
+  const {
+    characterName,
+    activeCharacter,
+    charactersData,
+    activeSearch,
+    openModal,
+  } = useSelector((state: RootState) => state.character);
   const handleSetCharacterName = (characterName: string) => {
     dispatch(setCharacterName(characterName));
   };
@@ -28,16 +34,22 @@ export const useCharacterStore = () => {
     dispatch(setActiveSearch(value));
   };
 
+  const handleSetOpenModal = (value: boolean) => {
+    dispatch(setOpenModal(value));
+  };
+
   return {
     /* Functions */
     handleSetCharacterName,
     handleSetData,
     handleSetActiveCharacter,
     handleSetActiveSearch,
+    handleSetOpenModal,
     /* States */
     characterName,
     activeCharacter,
     charactersData,
     activeSearch,
+    openModal,
   };
 };

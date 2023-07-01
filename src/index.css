@@ -11,4 +11,27 @@
     body{
       @apply text-white bg-slate-900 
     }
+}
+@keyframes modalEnter {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
   }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.transition-opacity {
+  transition-property: opacity;
+}
+
+.transition-transform {
+  transition-property: transform;
+}
+
+.animation-modal-enter {
+  animation: modalEnter 300ms forwards;
+}
+  

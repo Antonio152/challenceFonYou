@@ -2,10 +2,14 @@ import { useCharacterStore } from "../hooks/useCharacterStore";
 import { Character } from "../interfaces/characterInterface";
 
 export const Card = (character: Character) => {
-  const { handleSetActiveCharacter } = useCharacterStore();
+  const { handleSetActiveCharacter, handleSetOpenModal } = useCharacterStore();
+  const activeModalCharacter = () => {
+    handleSetActiveCharacter(character);
+    handleSetOpenModal(true);
+  };
   return (
     <div
-      onClick={() => handleSetActiveCharacter(character)}
+      onClick={activeModalCharacter}
       className="cursor-pointer block h-auto max-w-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:scale-105 transition-transform duration-300"
     >
       <div

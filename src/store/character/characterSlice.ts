@@ -19,6 +19,7 @@ export const charactersSlice = createSlice({
     },
     activeCharacter: <Character>{}, //WHen the user clicks on a character, we set the data
     activeSearch: false,
+    openModal: false,
   },
   reducers: {
     setCharacterName: (state, action: PayloadAction<string>) => {
@@ -33,6 +34,9 @@ export const charactersSlice = createSlice({
     setActiveSearch: (state, action: PayloadAction<boolean>) => {
       state.activeSearch = action.payload;
     },
+    setOpenModal: (state, action: PayloadAction<boolean>) => {
+      state.openModal = action.payload;
+    },
   },
 });
 
@@ -42,4 +46,5 @@ export const {
   setCharactersData,
   setActiveCharacter,
   setActiveSearch,
+  setOpenModal,
 } = charactersSlice.actions;
