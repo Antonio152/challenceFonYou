@@ -20,6 +20,7 @@ export const charactersSlice = createSlice({
     activeCharacter: <Character>{}, //WHen the user clicks on a character, we set the data
     activeSearch: false,
     openModal: false,
+    currentPage: 1,
   },
   reducers: {
     setCharacterName: (state, action: PayloadAction<string>) => {
@@ -37,6 +38,15 @@ export const charactersSlice = createSlice({
     setOpenModal: (state, action: PayloadAction<boolean>) => {
       state.openModal = action.payload;
     },
+    nextPage: (state) => {
+      state.currentPage += 1;
+    },
+    previousPage: (state) => {
+      state.currentPage -= 1;
+    },
+    resetPagination: (state) => {
+      state.currentPage = 1;
+    },
   },
 });
 
@@ -47,4 +57,7 @@ export const {
   setActiveCharacter,
   setActiveSearch,
   setOpenModal,
+  resetPagination,
+  nextPage,
+  previousPage,
 } = charactersSlice.actions;

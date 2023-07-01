@@ -9,7 +9,6 @@ export const Modal = () => {
       } transition-opacity duration-300 left-0 top-0 h-full w-full overflow-y-auto overflow-x-hidden outline-none`}
     >
       <div className="bg-slate-200 rounded-lg relative flex min-h-[60%] w-auto translate-y-[-10px] items-center transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[550px]:min-h-[70%] min-[280px]:max-w-[80%]">
-        {/* bg-slate-200 relative flex min-h-[calc(100%-1rem)] w-auto translate-y-[-10px] items-center  transition-all duration-300 ease-in-out min-[576px]:mx-auto min-[576px]:mt-7 min-[576px]:min-h-[calc(100%-3.5rem)] min-[576px]:max-w-[85%] */}
         <div className="relative flex w-full flex-col rounded-md border-none bg-white bg-clip-padding text-current shadow-lg outline-none">
           {/*Modal title*/}
           <div className="flex flex-shrink-0 items-center justify-between rounded-t-md border-b-2 border-neutral-100 border-opacity-100 p-4">
@@ -71,7 +70,7 @@ export const Modal = () => {
               onClick={() => handleSetOpenModal(false)}
               className="ml-1 inline-block text-black rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"
             >
-              Close
+              Cerrar
             </button>
           </div>
         </div>

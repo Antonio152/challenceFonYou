@@ -1,9 +1,10 @@
 import { useCharacterStore } from "../hooks/useCharacterStore";
 import { Card } from "./Card";
 import { useGetData } from "../hooks/useGetData";
+import { Pagination } from "./Pagination";
 export const GridData = () => {
-  const { activeSearch } = useCharacterStore();
-  const { data, isLoading, isError } = useGetData(1, activeSearch);
+  const { activeSearch, currentPage } = useCharacterStore();
+  const { data, isLoading, isError } = useGetData(currentPage, activeSearch);
 
   return (
     <>
@@ -14,11 +15,17 @@ export const GridData = () => {
         </h1>
       )}
       {!isLoading && !isError && data.results.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {data.results.map((character) => (
-            <Card key={character.id} {...character} />
-          ))}
-        </div>
+        <>
+          {/* Top navigation buttons */}
+          <Pagination isTop />
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {data.results.map((character) => (
+              <Card key={character.id} {...character} />
+            ))}
+          </div>
+          <Pagination isTop={false} />
+        </>
       )}
 
       {/* Navigation buttons */}

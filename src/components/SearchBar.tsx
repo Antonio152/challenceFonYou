@@ -1,12 +1,17 @@
 import { useCharacterStore } from "../hooks/useCharacterStore";
 
 export const SearchBar = () => {
-  const { characterName, handleSetCharacterName, handleSetActiveSearch } =
-    useCharacterStore();
+  const {
+    characterName,
+    handleSetCharacterName,
+    handleSetActiveSearch,
+    handleResetPagination,
+  } = useCharacterStore();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (characterName.trim() !== "") {
       handleSetActiveSearch(true);
+      handleResetPagination(); // Reset pagination
     }
   };
   return (

@@ -6,7 +6,6 @@ export const useGetData = (page: number, activeSearch: boolean) => {
     handleSetData,
     charactersData,
     characterName,
-    handleSetCharacterName,
     handleSetActiveSearch,
   } = useCharacterStore();
 
@@ -24,7 +23,7 @@ export const useGetData = (page: number, activeSearch: boolean) => {
       /* Disable search */
       handleSetActiveSearch(false);
       /* Clean Character name */
-      handleSetCharacterName("");
+      /*   handleSetCharacterName(""); */
 
       /* Catch Error 404 */
       if (Object.keys(data).length === 1) {

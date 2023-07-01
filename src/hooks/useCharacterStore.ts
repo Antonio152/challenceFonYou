@@ -2,9 +2,12 @@ import { useSelector } from "react-redux";
 import {
   setActiveCharacter,
   setActiveSearch,
+  resetPagination,
   setCharacterName,
   setCharactersData,
   setOpenModal,
+  nextPage,
+  previousPage,
 } from "../store/character/characterSlice";
 import { RootState, useAppDispatch } from "../store/store";
 import { Character, ICharacterData } from "../interfaces/characterInterface";
@@ -17,6 +20,7 @@ export const useCharacterStore = () => {
     charactersData,
     activeSearch,
     openModal,
+    currentPage,
   } = useSelector((state: RootState) => state.character);
   const handleSetCharacterName = (characterName: string) => {
     dispatch(setCharacterName(characterName));
@@ -38,6 +42,16 @@ export const useCharacterStore = () => {
     dispatch(setOpenModal(value));
   };
 
+  const handleResetPagination = () => {
+    dispatch(resetPagination());
+  };
+  const handleNexPage = () => {
+    dispatch(nextPage());
+  };
+  const handlePrevPage = () => {
+    dispatch(previousPage());
+  };
+
   return {
     /* Functions */
     handleSetCharacterName,
@@ -45,11 +59,15 @@ export const useCharacterStore = () => {
     handleSetActiveCharacter,
     handleSetActiveSearch,
     handleSetOpenModal,
+    handleResetPagination,
+    handleNexPage,
+    handlePrevPage,
     /* States */
     characterName,
     activeCharacter,
     charactersData,
     activeSearch,
     openModal,
+    currentPage,
   };
 };
