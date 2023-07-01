@@ -11,6 +11,14 @@
     body{
       @apply text-white bg-slate-900 
     }
+    .rotate-3d {
+      transform-style: preserve-3d;
+      transform: rotateY(0);
+    }
+    
+    .rotate-3d:hover {
+      transform: rotateY(180deg);
+    }
 }
 @keyframes modalEnter {
   0% {
@@ -34,4 +42,3 @@
 .animation-modal-enter {
   animation: modalEnter 300ms forwards;
 }
-  

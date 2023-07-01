@@ -26,9 +26,9 @@ export const Modal = () => {
           {/* End modal title */}
           {/* Modal body */}
           <div className="relative p-4 grid grid-cols-1 lg:grid-cols-12 gap-1">
-            <div className="col-span-5 relative overflow-hidden bg-cover bg-no-repeat px-3">
+            <div className="col-span-5 relative overflow-hidden bg-cover bg-no-repeat px-3 perspective">
               <img
-                className="rounded-lg w-full"
+                className="rounded-lg w-full transition-transform duration-500 transform-gpu hover:rotate-3d"
                 src={activeCharacter.image}
                 alt={activeCharacter.name}
               />
