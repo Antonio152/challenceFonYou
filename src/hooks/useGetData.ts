@@ -14,7 +14,9 @@ export const useGetData = (page: number, activeSearch: boolean) => {
     try {
       const response = await fetch(
         `${
-          import.meta.env.VITE_API_CHARACTER
+          import.meta.env.VITE_MODE === "DEVELOPMENT"
+            ? import.meta.env.VITE_API_CHARACTER_DEV
+            : import.meta.env.VITE_API_CHARACTER_PROD
         }/?page=${page}&name=${characterName}`
       );
 
@@ -22,8 +24,6 @@ export const useGetData = (page: number, activeSearch: boolean) => {
 
       /* Disable search */
       handleSetActiveSearch(false);
-      /* Clean Character name */
-      /*   handleSetCharacterName(""); */
 
       /* Catch Error 404 */
       if (Object.keys(data).length === 1) {

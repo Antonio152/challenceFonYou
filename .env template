@@ -1,1 +1,3 @@
-VITE_API_CHARACTER = https://rickandmortyapi.com/api/character
+VITE_API_CHARACTER_PROD = https://rickandmortyapi.com/api/character
+VITE_API_CHARACTER_DEV = http://localhost:3000/api/character
+VITE_MODE = DEVELOPMENT
